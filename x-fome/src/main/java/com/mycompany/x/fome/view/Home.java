@@ -5,17 +5,21 @@
  */
 package com.mycompany.x.fome.view;
 
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  *
  * @author prisc
  */
-public class Home extends javax.swing.JDialog {
+public class Home extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public Home(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    private Loja lojaPanel = null; 
+    private Pedidos pedidosPanel = null;
+    public Home() {
         initComponents();
     }
 
@@ -29,24 +33,51 @@ public class Home extends javax.swing.JDialog {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        loja = new javax.swing.JMenu();
+        carrinho = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        pedidos = new javax.swing.JMenu();
+        confuguracoes = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Loja");
-        jMenuBar1.add(jMenu1);
+        loja.setText("Loja");
+        loja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lojaMouseClicked(evt);
+            }
+        });
+        loja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lojaActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(loja);
 
-        jMenu2.setText("Pedidos");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Carrinho");
+        carrinho.setText("Carrinho");
+        jMenuBar1.add(carrinho);
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Configurações");
-        jMenuBar1.add(jMenu4);
+        pedidos.setText("Pedidos");
+        pedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pedidosMouseClicked(evt);
+            }
+        });
+        pedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedidosActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(pedidos);
+
+        confuguracoes.setText("Configurações");
+        confuguracoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confuguracoesActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(confuguracoes);
 
         setJMenuBar(jMenuBar1);
 
@@ -63,6 +94,70 @@ public class Home extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidosMouseClicked
+   
+        if(pedidosPanel == null){
+            pedidosPanel = new Pedidos();
+            pedidosPanel.setBounds(0,0,400,400);  
+            pedidosPanel.setBackground(Color.gray);
+            this.setLayout(null);
+            this.add(pedidosPanel);
+            this.setSize(400,400);
+        }else{
+            pedidosPanel.setVisible(true);
+            lojaPanel.setVisible(false);
+        }
+        
+         
+    }//GEN-LAST:event_pedidosMouseClicked
+
+    private void pedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedidosActionPerformed
+         if(pedidosPanel == null){
+            pedidosPanel = new Pedidos();
+            pedidosPanel.setBounds(0,0,400,400);  
+            pedidosPanel.setBackground(Color.gray);
+            this.setLayout(null);
+            this.add(pedidosPanel);
+            this.setSize(400,400);
+        }else{
+            pedidosPanel.setVisible(true);
+            lojaPanel.setVisible(false);
+        }
+    }//GEN-LAST:event_pedidosActionPerformed
+
+    private void lojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lojaActionPerformed
+        if(lojaPanel == null){
+            lojaPanel = new Loja(this);
+            lojaPanel.setBounds(0,0,400,400);
+            lojaPanel.setBackground(Color.gray);
+            this.setLayout(null);
+            this.add(lojaPanel);
+            this.setSize(400,400);
+        }else{
+            lojaPanel.setVisible(true);
+            pedidosPanel.setVisible(false);
+        }
+    }//GEN-LAST:event_lojaActionPerformed
+
+    private void lojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lojaMouseClicked
+        if(lojaPanel == null){
+            lojaPanel = new Loja(this);
+            lojaPanel.setBounds(0,0,400,400);
+            lojaPanel.setBackground(Color.gray);
+            this.setLayout(null);
+            this.add(lojaPanel);
+            this.setSize(400,400);
+        }else{
+            lojaPanel.setVisible(true);
+            pedidosPanel.setVisible(false);
+        }
+
+    }//GEN-LAST:event_lojaMouseClicked
+
+    private void confuguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confuguracoesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confuguracoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,26 +186,20 @@ public class Home extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Home dialog = new Home(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new Home().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu carrinho;
+    private javax.swing.JMenu confuguracoes;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu loja;
+    private javax.swing.JMenu pedidos;
     // End of variables declaration//GEN-END:variables
 }

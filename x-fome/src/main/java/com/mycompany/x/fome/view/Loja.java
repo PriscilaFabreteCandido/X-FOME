@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.x.fome.view.loja;
+package com.mycompany.x.fome.view;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
