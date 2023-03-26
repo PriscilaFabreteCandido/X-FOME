@@ -5,6 +5,7 @@
  */
 package com.mycompany.x.fome.view;
 
+import com.mycompany.x.fome.gertarefas.GerInterfaceGrafica;
 import java.awt.Frame;
 
 /**
@@ -17,6 +18,7 @@ public class Login extends javax.swing.JDialog {
      * Creates new form TelaLogin
      */
     private Frame principal = null;
+    private GerInterfaceGrafica gerInterfaceGrafica;
     public Login(java.awt.Frame parent, boolean modal) {
        
         super(parent, modal);
@@ -42,7 +44,7 @@ public class Login extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         realizarLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        cadastrar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
 
@@ -63,7 +65,12 @@ public class Login extends javax.swing.JDialog {
 
         jLabel4.setText("Deseja se cadastrar?");
 
-        jButton2.setText("Clique aqui");
+        cadastrar.setText("Clique aqui");
+        cadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadastrarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,7 +87,7 @@ public class Login extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(35, 35, 35)
-                                .addComponent(jButton2))
+                                .addComponent(cadastrar))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel2)
@@ -112,7 +119,7 @@ public class Login extends javax.swing.JDialog {
                 .addComponent(realizarLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(cadastrar)
                     .addComponent(jLabel4))
                 .addGap(72, 72, 72))
         );
@@ -126,52 +133,17 @@ public class Login extends javax.swing.JDialog {
         this.setVisible(false);
     }//GEN-LAST:event_realizarLoginMouseClicked
 
+    private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
+        gerInterfaceGrafica.abrirTelaCadastro();
+    }//GEN-LAST:event_cadastrarMouseClicked
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                
-                Login dialog = new Login(new Principal(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton cadastrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
