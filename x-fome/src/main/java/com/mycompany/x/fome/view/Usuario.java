@@ -9,12 +9,12 @@ package com.mycompany.x.fome.view;
  *
  * @author prisc
  */
-public class Cadastro extends javax.swing.JPanel {
+public class Usuario extends javax.swing.JPanel {
 
     /**
      * Creates new form Configuracao
      */
-    public Cadastro() {
+    public Usuario() {
         initComponents();
     }
 

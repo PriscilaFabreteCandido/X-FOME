@@ -5,6 +5,8 @@
  */
 package com.mycompany.x.fome.view;
 
+import java.awt.Frame;
+
 /**
  *
  * @author prisc
@@ -14,9 +16,16 @@ public class Login extends javax.swing.JDialog {
     /**
      * Creates new form TelaLogin
      */
+    private Frame principal = null;
     public Login(java.awt.Frame parent, boolean modal) {
+       
         super(parent, modal);
+        this.principal = parent;
         initComponents();
+    }
+
+    public Login() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -112,8 +121,8 @@ public class Login extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void realizarLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_realizarLoginMouseClicked
-        Home home = new Home();
-        home.setVisible(true);
+  
+        this.principal.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_realizarLoginMouseClicked
 
@@ -148,7 +157,8 @@ public class Login extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Login dialog = new Login(new javax.swing.JFrame(), true);
+                
+                Login dialog = new Login(new Principal(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

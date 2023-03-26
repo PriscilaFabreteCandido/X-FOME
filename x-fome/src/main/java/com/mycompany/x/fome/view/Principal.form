@@ -17,6 +17,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Carrinho"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="carrinhoMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu3">
         </Menu>
@@ -34,6 +37,7 @@
             <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="confuguracoesMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confuguracoesActionPerformed"/>
           </Events>
         </Menu>

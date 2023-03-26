@@ -5,22 +5,24 @@
  */
 package com.mycompany.x.fome.view;
 
+import com.mycompany.x.fome.gertarefas.GerInterfaceGrafica;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
  *
  * @author prisc
  */
-public class Home extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    private Loja lojaPanel = null; 
-    private Pedidos pedidosPanel = null;
-    public Home() {
+    private GerInterfaceGrafica gerInterfaceGrafica;
+    public Principal() {
         initComponents();
+        gerInterfaceGrafica = new GerInterfaceGrafica(this);
     }
 
     /**
@@ -55,6 +57,11 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1.add(loja);
 
         carrinho.setText("Carrinho");
+        carrinho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                carrinhoMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(carrinho);
         jMenuBar1.add(jMenu3);
 
@@ -72,6 +79,11 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1.add(pedidos);
 
         confuguracoes.setText("Configurações");
+        confuguracoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                confuguracoesMouseClicked(evt);
+            }
+        });
         confuguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confuguracoesActionPerformed(evt);
@@ -96,103 +108,38 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidosMouseClicked
-   
-        if(pedidosPanel == null){
-            pedidosPanel = new Pedidos();
-            pedidosPanel.setBounds(0,0,400,400);  
-            pedidosPanel.setBackground(Color.gray);
-            this.setLayout(null);
-            this.add(pedidosPanel);
-            this.setSize(400,400);
-        }else{
-            pedidosPanel.setVisible(true);
-            lojaPanel.setVisible(false);
-        }
-        
-         
+        this.gerInterfaceGrafica.abrirPanelPedidos();  
     }//GEN-LAST:event_pedidosMouseClicked
 
     private void pedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedidosActionPerformed
-         if(pedidosPanel == null){
-            pedidosPanel = new Pedidos();
-            pedidosPanel.setBounds(0,0,400,400);  
-            pedidosPanel.setBackground(Color.gray);
-            this.setLayout(null);
-            this.add(pedidosPanel);
-            this.setSize(400,400);
-        }else{
-            pedidosPanel.setVisible(true);
-            lojaPanel.setVisible(false);
-        }
+        this.gerInterfaceGrafica.abrirPanelPedidos();
     }//GEN-LAST:event_pedidosActionPerformed
 
     private void lojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lojaActionPerformed
-        if(lojaPanel == null){
-            lojaPanel = new Loja(this);
-            lojaPanel.setBounds(0,0,400,400);
-            lojaPanel.setBackground(Color.gray);
-            this.setLayout(null);
-            this.add(lojaPanel);
-            this.setSize(400,400);
-        }else{
-            lojaPanel.setVisible(true);
-            pedidosPanel.setVisible(false);
-        }
+         this.gerInterfaceGrafica.abrirPanelLoja();
     }//GEN-LAST:event_lojaActionPerformed
 
     private void lojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lojaMouseClicked
-        if(lojaPanel == null){
-            lojaPanel = new Loja(this);
-            lojaPanel.setBounds(0,0,400,400);
-            lojaPanel.setBackground(Color.gray);
-            this.setLayout(null);
-            this.add(lojaPanel);
-            this.setSize(400,400);
-        }else{
-            lojaPanel.setVisible(true);
-            pedidosPanel.setVisible(false);
-        }
+        this.gerInterfaceGrafica.abrirPanelLoja();
 
     }//GEN-LAST:event_lojaMouseClicked
 
     private void confuguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confuguracoesActionPerformed
-        // TODO add your handling code here:
+        this.gerInterfaceGrafica.abrirPanelConfiguracoes();
     }//GEN-LAST:event_confuguracoesActionPerformed
+
+    private void carrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carrinhoMouseClicked
+        this.gerInterfaceGrafica.abrirPanelCarrinho();
+    }//GEN-LAST:event_carrinhoMouseClicked
+
+    private void confuguracoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confuguracoesMouseClicked
+        this.gerInterfaceGrafica.abrirPanelConfiguracoes();
+    }//GEN-LAST:event_confuguracoesMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Home().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu carrinho;
