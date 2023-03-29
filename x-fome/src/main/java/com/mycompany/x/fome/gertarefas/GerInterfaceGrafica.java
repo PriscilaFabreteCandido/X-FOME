@@ -104,7 +104,7 @@ public class GerInterfaceGrafica {
     }
     
     public void abrirTelaCadastro(){
-        cadastro = new Cadastro(home, true);
+        cadastro = new Cadastro(new javax.swing.JFrame(), true);
         cadastro.setVisible(true);
     }
     
