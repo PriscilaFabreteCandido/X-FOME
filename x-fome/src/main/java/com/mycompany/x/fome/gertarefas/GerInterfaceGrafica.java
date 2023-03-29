@@ -39,7 +39,7 @@ public class GerInterfaceGrafica {
     public void abrirPanelLoja(){
         if(lojaPanel == null){
             lojaPanel = new Loja(home);
-            lojaPanel.setBounds(0,0,400,500);
+            lojaPanel.setBounds(0,0,600,600);
             lojaPanel.setBackground(Color.gray);
             home.setLayout(null);
             home.add(lojaPanel);
@@ -74,11 +74,11 @@ public class GerInterfaceGrafica {
     public void abrirPanelPedidos(){
         if(pedidosPanel == null){
             pedidosPanel = new Pedidos();
-            pedidosPanel.setBounds(0,0,400,500);  
-            pedidosPanel.setBackground(Color.gray);
+            pedidosPanel.setBounds(0,0,400,600);  
+            
             home.setLayout(null);
             home.add(pedidosPanel);
-            home.setSize(400,500);
+            home.setSize(450,600);
         }else{
             pedidosPanel.setVisible(true);
             if(lojaPanel != null)  lojaPanel.setVisible(false); 
