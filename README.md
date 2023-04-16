@@ -1,2 +1,2 @@
 # X-FOME
-Projeto desenvolvido para a discipla de POO2
+Projeto desenvolvido para a disciplina de POO2
