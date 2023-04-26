@@ -14,13 +14,13 @@ import javax.swing.JPanel;
  *
  * @author prisc
  */
-public class Principal extends javax.swing.JFrame {
+public class FormPrincipalCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
     private GerInterfaceGrafica gerInterfaceGrafica;
-    public Principal() {
+    public FormPrincipalCliente() {
         initComponents();
         gerInterfaceGrafica = new GerInterfaceGrafica(this);
     }
@@ -108,11 +108,11 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidosMouseClicked
-        this.gerInterfaceGrafica.abrirPanelPedidos();  
+         
     }//GEN-LAST:event_pedidosMouseClicked
 
     private void pedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedidosActionPerformed
-        this.gerInterfaceGrafica.abrirPanelPedidos();
+        
     }//GEN-LAST:event_pedidosActionPerformed
 
     private void lojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lojaActionPerformed
@@ -125,15 +125,15 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_lojaMouseClicked
 
     private void confuguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confuguracoesActionPerformed
-        this.gerInterfaceGrafica.abrirPanelConfiguracoes();
+       
     }//GEN-LAST:event_confuguracoesActionPerformed
 
     private void carrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carrinhoMouseClicked
-        this.gerInterfaceGrafica.abrirPanelCarrinho();
+      ;
     }//GEN-LAST:event_carrinhoMouseClicked
 
     private void confuguracoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confuguracoesMouseClicked
-        this.gerInterfaceGrafica.abrirPanelConfiguracoes();
+       
     }//GEN-LAST:event_confuguracoesMouseClicked
 
     /**

@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package com.mycompany.x.fome.domain;
-
-import com.mycompany.x.fome.view.Usuario;
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Date;

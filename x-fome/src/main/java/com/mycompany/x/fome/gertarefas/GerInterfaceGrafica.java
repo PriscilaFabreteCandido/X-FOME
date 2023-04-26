@@ -11,8 +11,8 @@ import com.mycompany.x.fome.view.CarrinhoProduto;
 import com.mycompany.x.fome.view.Login;
 import com.mycompany.x.fome.view.Loja;
 import com.mycompany.x.fome.view.Pedidos;
-import com.mycompany.x.fome.view.Principal;
-import com.mycompany.x.fome.view.Usuario;
+import com.mycompany.x.fome.view.FormPrincipalCliente;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JDialog;
@@ -23,15 +23,8 @@ import javax.swing.JFrame;
  * @author prisc
  */
 public class GerInterfaceGrafica {
-    private Loja lojaPanel = null; 
-    private Pedidos pedidosPanel = null;
-    private Carrinho carrinhoPanel = null;
-    private Usuario usuario = null;
-    private ArrayList<CarrinhoProduto> carrinhoProdutoPanel = null;
-    private JFrame home;
-    private JDialog janelaCadastro = null;
-    private Cadastro cadastro = null;
-    
+   
+   
     public GerInterfaceGrafica(JFrame home) {
         this.home = home;
     }
@@ -52,63 +45,8 @@ public class GerInterfaceGrafica {
         }
         
     }
-    
-    public void abrirPanelConfiguracoes(){
-         if(usuario == null){
-            this.usuario = new Usuario();
-            this.usuario.setNomeButton("Editar");
-            this.usuario.setTitulo("Minha Conta");
-            this.usuario.setBounds(0,0,400,500);
-            this.usuario.setBackground(Color.gray);
-            home.setLayout(null);
-            home.add(usuario);
-            home.setSize(400,500);
-        }else{
-            this.usuario.setVisible(true);
-            if(carrinhoPanel != null)  carrinhoPanel.setVisible(false); 
-            if(lojaPanel != null)  lojaPanel.setVisible(false); 
-            if(pedidosPanel != null) pedidosPanel.setVisible(false);
-        } 
-    }
-    
-    public void abrirPanelPedidos(){
-        if(pedidosPanel == null){
-            pedidosPanel = new Pedidos();
-            pedidosPanel.setBounds(0,0,400,600);  
-            
-            home.setLayout(null);
-            home.add(pedidosPanel);
-            home.setSize(450,600);
-        }else{
-            pedidosPanel.setVisible(true);
-            if(lojaPanel != null)  lojaPanel.setVisible(false); 
-            if(carrinhoPanel != null) carrinhoPanel.setVisible(false);
-            if(usuario != null)  usuario.setVisible(false); 
-        }
-    }
-    
-    public void abrirPanelCarrinho(){
-        if(carrinhoPanel == null){
-            carrinhoPanel = new Carrinho();
-            carrinhoPanel.setBounds(0,0,400,500);
-            carrinhoPanel.setBackground(Color.gray);
-            home.setLayout(null);
-            home.add(carrinhoPanel);
-            home.setSize(400,500);
-        }else{
-            carrinhoPanel.setVisible(true);
-            if(lojaPanel != null)  lojaPanel.setVisible(false); 
-            if(pedidosPanel != null) pedidosPanel.setVisible(false);
-            if(usuario != null)  usuario.setVisible(false); 
-        } 
-    }
-    
-    public void abrirTelaCadastro(){
-        cadastro = new Cadastro(new javax.swing.JFrame(), true);
-        cadastro.setVisible(true);
-    }
-    
-    
+   
+  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -138,7 +76,7 @@ public class GerInterfaceGrafica {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                Login dialog = new Login(new Principal(), true);
+                Login dialog = new Login(new FormPrincipalCliente(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
