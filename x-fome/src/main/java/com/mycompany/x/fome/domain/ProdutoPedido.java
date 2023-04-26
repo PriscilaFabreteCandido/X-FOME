@@ -9,8 +9,8 @@ package com.mycompany.x.fome.domain;
  *
  * @author 2021122760232
  */
-public class CategoriaProduto {
-    private String nome;
-    private String idCategoriaProduto;
-    
+public class ProdutoPedido {
+    private Produto produto;
+    private int qtd;
+    private double preco;
 }

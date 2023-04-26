@@ -11,31 +11,12 @@ package com.mycompany.x.fome.domain;
  */
 public class Produto {
     private Integer idProduto;
+    private Categoria categoria;
     private String nome;
-    private Double valor;
+    private String ingredientes;
+    private Double preco;
 
-    public Integer getIdProduto() {
-        return idProduto;
-    }
-
-    public void setIdProduto(Integer idProduto) {
-        this.idProduto = idProduto;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Double getValor() {
-        return valor;
-    }
-
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
+  
+    
     
 }

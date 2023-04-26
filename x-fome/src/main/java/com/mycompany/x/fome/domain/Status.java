@@ -9,6 +9,7 @@ package com.mycompany.x.fome.domain;
  *
  * @author 2021122760232
  */
-public class ItemPedido {
-    
+public class Status {
+    private int idStatus;
+    private String status;
 }
