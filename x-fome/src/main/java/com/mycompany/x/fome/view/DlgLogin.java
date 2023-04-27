@@ -49,12 +49,12 @@ public class DlgLogin extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Senha: ");
 
-        jButton1.setForeground(new java.awt.Color(204, 255, 204));
+        jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setText("Realizar Login");
 
         jLabel4.setText("Deseja se cadastrar?");
 
-        jButton2.setForeground(new java.awt.Color(255, 204, 204));
+        jButton2.setBackground(new java.awt.Color(255, 153, 153));
         jButton2.setText("Clique aqui");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
