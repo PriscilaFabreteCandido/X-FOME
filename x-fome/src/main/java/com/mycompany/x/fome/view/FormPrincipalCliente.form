@@ -15,7 +15,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="carrinho">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Carrinho"/>
+            <Property name="text" type="java.lang.String" value="Meus Pedidos"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="carrinhoMouseClicked"/>
@@ -23,18 +23,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu3">
         </Menu>
-        <Menu class="javax.swing.JMenu" name="pedidos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Pedidos"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pedidosMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pedidosActionPerformed"/>
-          </Events>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="confuguracoes">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
+            <Property name="text" type="java.lang.String" value="Minha Conta"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="confuguracoesMouseClicked"/>
